@@ -54,8 +54,10 @@ for (let i = 0; i < copysec.length; i++) {
         const alertname = cardsec.querySelector("p").textContent;
         const alertnumber = cardsec.querySelector("h3").textContent;
         alert(alertname + "  " + alertnumber);
-
         copycount++
         copycnt.textContent = copycount;
+        const text = `${alertname} - ${alertnumber}`;
+        navigator.clipboard.writeText(text);
+
     });
 }
