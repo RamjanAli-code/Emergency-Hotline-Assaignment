@@ -1,3 +1,4 @@
+//heart count
 const heartsec = document.getElementsByClassName("heart");
 const countsec = document.getElementById("count");
 let count = 0;
@@ -7,6 +8,7 @@ for (let i = 0; i < heartsec.length; i++) {
         countsec.textContent = count;
     });
 }
+//call section alert and coin
 const callingsec = document.getElementsByClassName("calling");
 const coinsec = document.getElementById("coin");
 let coin = 100;
@@ -39,5 +41,21 @@ for (let i = 0; i < heartsec.length; i++) {
         document.getElementById("clear-btn").addEventListener("click", function() {
             containersec.innerHTML = "";
         });
+    });
+}
+//copyalert and copy data
+const copysec = document.getElementsByClassName("copy");
+const copycnt = document.getElementById("copy-count");
+let copycount = 0;
+for (let i = 0; i < copysec.length; i++) {
+    copysec[i].addEventListener("click", function() {
+
+        const cardsec = copysec[i].closest(".card");
+        const alertname = cardsec.querySelector("p").textContent;
+        const alertnumber = cardsec.querySelector("h3").textContent;
+        alert(alertname + "  " + alertnumber);
+
+        copycount++
+        copycnt.textContent = copycount;
     });
 }
