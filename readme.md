@@ -1,121 +1,121 @@
-## 🌟 WELCOME TO ( সহজ সরল সিম্পল ) ASSIGNMENT-002 😎
 
-### 📅 Deadline For 60 marks: 25th July, 2025 (11:59 pm ⏱️)
+1.Answer:Difference between getElementById, getElementsByClassName, and querySelector/querySelectorAll
 
-### 📅 Deadline For 50 marks: 26th July, 2025 (11:59 pm ⏱️)
-
-### 📅 Deadline For 30 marks:\*\* Any time after 26th July.
-
+1.1:getElementById 
+>>Select one element by id
+>>A single element object
+1.2:getElementByClassName 
+>>Select all elements with a specific class
+>>A live HTML Collection
+1.3:querySelector
+>>Select elements using CSS selectors
+>>Returns first match
+1.4:querySelectorAll 
+>>Select elements using CSS selectors
+>>Returns all matches
 ---
 
-## ✅ Main Requirements (50 Marks)
-
-### 1. Navbar
-
-- **Logo/Website name** on the left
-- **Menu items** on the right with **cart icon**
-- **Mobile Responsiveness:**
-  - Logo/website name on the left
-  - Cart icon with name on the right as Figma
-  - Other navbar elements will be hidden for cleaner mobile experience
-
----
-
-### 2. Banner
-
-- **Image** on the right
-- **Title and paragraph** on the left
-- **Mobile Responsiveness:**
-  - Image moves to the top
-  - Content after image
-  - Content left aligned as Figma
-
----
-
-### 3. Plants Section
-
-- centered **Title and subtitle** as Figma
-- **8 cards with 4 Collumn View** with image, name, price, and Add to cart button
-- **Mobile Responsiveness:**
-  - Display Cards in 2 Collumn
+2.Ans:Creating and insert a new element involves two steps:
+2.1:Create element
+ const newp=document.createElement("p");
+        newp.textContent="second element";
+2.2:Add content and attributes
+document.getElementById("container").appendChild(newp);
+Example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create and insert element</title>
+</head>
+<body>
+    <div id="container">
+        <p>first element</p>
+    </div>
+    <script>
+        //create
+        const newp=document.createElement("p");
+        newp.textContent="second element";
+        //insert
+        document.getElementById("container").appendChild(newp);
+    </script>
+</body>
+</html>
 
 ---
+3.Answer:Event bubbling and its work
 
-### 4. Plants Lover Section
-
-- **Image** on the left
-- **Title and unordered list** on the right as Figma
-- **Mobile Responsiveness:**
-  - Image moves to the top
-  - Content after image
-  - Content left aligned as Figma
-
----
-
-### 5. Join Section
-
-- centered **Join the colorful Bunch** message
-- **Background image** in the full section like Figma
-- **Input box with placeholder** and **subscribe button** like Figma
-- **Mobile Responsiveness:** Responsive design like Figma
-
----
-
-### 6. Footer Section
-
-- **Website logo** on the left
-- **Home, features link items** just like Figma
-- **Mobile Responsiveness:** Responsive design like Figma
-
----
-
-## 🧪 Challenges Part ( 10 Mark)
-
-### Latest Deal Section
-
-- **Title and subtitles**
-- **Card layout** like Figma
-- **Mobile Responsiveness:** Show a card on display like Figma
+Event bubbling is a way that events generate through the DOM.
+Clicked first triggers on the target element and the bubbles up to its parent elements.
+Event bubbling work below example:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbling</title>
+</head>
+<body>
+    <div class="parent">
+        <button class="child">Click</button>
+    </div>
+    <script>
+        document.getElementById("child").addEventListener("click",function(){
+            alert("button clicked");
+        });
+        document.getElementById("parent").addEventListener("click",function(){
+            alert("parent clicked");
+        });
+    </script>
+</body>
+</html>  
 
 ---
+4.Answer:Event Delegation and asits useful
 
-### Trusted Plant Lover Badge
+Event Delegation is a pattern in javaScript .Its attach a single event listener to a parent instead of attaching separate listeners to its of its child elements.
 
-- Position a Trusted badge at the **Plant Lover** Image as Figma
-- - **Mobile Responsiveness:** Hide the Trusted badge in Mobile Device
+Its useful because:
+>>One event listener instead of hundreds
+>>important in big lists and tables.
+>>Child elements are added/removed later no need to re-attach listener.
 
----
-
-## 🕛 Optional Part ( 0 Marks)
-
-`⚠️ You wont get any support for Optional part. Search Google and try it yourself`
-
-- Create an Animation for Trusted Plant Lover Badge
-
-  - It will Spin infinite times
-
-- Show an Alert with a message `"Flower Added to Cart"` when some one click on **Add to Cart** Button
-
-## ⚙️ Technology Stack
-
-- HTML
-- CSS (Vanilla/ Talwind CSS only)
-- ⚠️ **No libraries (e.g., DaisyUI, Flowbite) allowed.**
-
----
-
-## 📌 Rules
-
-- ✅ Minimum **5 meaningful commits** required.
-- ❌ No Lorem Ipsum or dummy placeholder text. Use relevant content only.
-
----
-
-## 🔗 What to Submit
-
-- 📂 **GitHub Repository:**
-- 🌐 **Live Link:**
+Example :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation</title>
+</head>
+<body>
+    <ul id="unorder">
+        <li>Ramjan</li>
+        <li>Jibon</li>
+        <li>Sopon</li>
+    </ul>
+    <script>
+        const unorder=document.getElementById("unorder");
+        //Event Delegation
+        unorder.addEventListener("click",function(e){
+            if(e.target.tagName==="LI"){
+                alert(e.target.textContent+" clicked");
+            }
+        });
+    </script>
+</body>
+</html>
 
 ---
+5.Answer:Difference between preventDefault() and stopPropagation() methods
 
-# Let's Code and Achieve your Dream 🎯
+5.1:preventDefault() methods
+>>Prevents the default action of an element
+>>It does not stop event bubbling
+>>Stop a form from submitting
+
+5.2:stopPropagation() methods
+>>Stops the event from bubbling up the DOM tree.
+>>The event is still executed on the target element.
+>>Most useful when donot want parent elements in event listener.
