@@ -99,7 +99,7 @@ Event bubbling work below example:<br>
 </body>
 </html> 
 
-<br>
+```
 ---
 4.Answer:Event Delegation and asits useful<br>
 
@@ -142,7 +142,7 @@ Example :<br>
 </body>
 </html>
 
-<br>
+```
 ---
 5.Answer:Difference between preventDefault() and stopPropagation() methods<br>
 
