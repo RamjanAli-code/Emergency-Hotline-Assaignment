@@ -28,6 +28,7 @@
 #Select elements using CSS selectors<br>
 
 #Returns all matches<br>
+
 ---
 
 2.Ans:Creating and insert a new element involves two steps:<br>
@@ -35,15 +36,14 @@
 
 2.1:Create element<br>
 
-
- const newp=document.createElement("p");<br>
-
-        newp.textContent="second element";<br>
+```html
+ const newp=document.createElement("p");
+ newp.textContent="second element";
 
 2.2:Add content and attributes<br>
 
-
-document.getElementById("container").appendChild(newp);<br>
+```html
+document.getElementById("container").appendChild(newp);
 
 Example:<br>
 
@@ -163,18 +163,3 @@ Example :<br>
 
 
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Example</title>
-</head>
-<body>
-    <div class="card">
-        <h2>Title</h2>
-        <p>This is a paragraph.</p>
-    </div>
-</body>
-</html>
