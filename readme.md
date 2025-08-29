@@ -67,7 +67,7 @@ Example:<br>
 </body>
 </html>
 
-<br>
+```
 ---
 3.Answer:Event bubbling and its work<br>
 
