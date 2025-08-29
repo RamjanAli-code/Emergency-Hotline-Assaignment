@@ -12,7 +12,7 @@ for (let i = 0; i < heartsec.length; i++) {
 const callingsec = document.getElementsByClassName("calling");
 const coinsec = document.getElementById("coin");
 let coin = 100;
-for (let i = 0; i < heartsec.length; i++) {
+for (let i = 0; i < callingsec.length; i++) {
     callingsec[i].addEventListener("click", function() {
         if (coin < 20) {
             alert(" ⚠️ Warning! Coin less than 20");
@@ -21,7 +21,7 @@ for (let i = 0; i < heartsec.length; i++) {
             const cardsec = callingsec[i].closest(".card");
             const alertname = cardsec.querySelector("p").textContent;
             const alertnumber = cardsec.querySelector("h3").textContent;
-            alert(alertname + "  " + alertnumber);
+            alert("📞 calling " + alertname + " " + alertnumber);
 
             coin -= 20;
             coinsec.textContent = coin;
@@ -30,11 +30,19 @@ for (let i = 0; i < heartsec.length; i++) {
         const addcontainer = document.createElement("div");
         const cards = callingsec[i].closest(".card");
         const servicename = cards.querySelector("p").textContent;
+        const tservicename = cards.querySelector("h1").textContent;
         const servicenumber = cards.querySelector("h3").textContent;
+        const time = new Date();
+        const localtime = time.toLocaleTimeString();
         addcontainer.innerHTML = `
-        <div class=" bg-gray-300 w-full h-[70px] rounded-xl flex flex-col my-3 px-3 ">
-        <p class="text-[#5C5C5C] font-bold text-xl ">${servicename}</p>
+        <div class=" bg-gray-100 w-full h-[70px] rounded-xl flex  my-3 px-3 justify-between items-center ">
+        <div>
+        <h1 class="font-bold pt-1 text-xl">${tservicename}</h1>
         <h3 class="font-bold pb-1 text-2xl">${servicenumber}</h3>
+        </div>
+        <div> 
+        <p class=" text-[16px] "> ${localtime}</p>
+        </div>
 
 </div> `;
         containersec.appendChild(addcontainer);
@@ -53,10 +61,10 @@ for (let i = 0; i < copysec.length; i++) {
         const cardsec = copysec[i].closest(".card");
         const alertname = cardsec.querySelector("p").textContent;
         const alertnumber = cardsec.querySelector("h3").textContent;
-        alert(alertname + "  " + alertnumber);
+        alert("Copy Number:  " + alertnumber);
         copycount++
         copycnt.textContent = copycount;
-        const text = `${alertname} - ${alertnumber}`;
+        const text = `${alertnumber}`;
         navigator.clipboard.writeText(text);
 
     });
