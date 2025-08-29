@@ -36,13 +36,11 @@
 
 2.1:Create element<br>
 
-```html
  const newp=document.createElement("p");
  newp.textContent="second element";
 
 2.2:Add content and attributes<br>
 
-```html
 document.getElementById("container").appendChild(newp);
 
 Example:<br>
