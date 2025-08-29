@@ -37,11 +37,11 @@ for (let i = 0; i < callingsec.length; i++) {
         addcontainer.innerHTML = `
         <div class=" bg-gray-100 w-full h-[70px] rounded-xl flex  my-3 px-3 justify-between items-center ">
         <div>
-        <h1 class="font-bold pt-1 text-xl">${tservicename}</h1>
-        <h3 class="font-bold pb-1 text-2xl">${servicenumber}</h3>
+        <h1 class="font-bold pt-1 text-[16px]">${tservicename}</h1>
+        <h3 class="font-bold pb-1 text-1xl">${servicenumber}</h3>
         </div>
         <div> 
-        <p class=" text-[16px] "> ${localtime}</p>
+        <p class=" text-[12px] "> ${localtime}</p>
         </div>
 
 </div> `;
