@@ -36,8 +36,8 @@
 
 2.1:Create element<br>
 
- const newp=document.createElement("p");
- newp.textContent="second element";
+ const newp=document.createElement("p");<br>
+ newp.textContent="second element";<br>
 
 2.2:Add content and attributes<br>
 
